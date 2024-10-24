@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Function to calculate factorial using recursion
+factorial() {
+    if [ $1 -le 1 ]; then
+        echo 1
+    else
+        prev=$(factorial $(( $1 - 1 )))
+        echo $(( $1 * prev ))
+    fi
+}
+
+# Prompt the user for input
+echo "Enter a number to calculate its factorial:"
+read number
+
+# Calculate and display the factorial
+result=$(factorial $number)
+echo "Factorial of $number is: $resul

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Function to generate Fibonacci series without recursion
+fibonacci() {
+    a=0
+    b=1
+    echo -n "$a $b "
+
+    for (( i=2; i<$1; i++ ))
+    do
+        next=$(( a + b ))
+        echo -n "$next "
+        a=$b
+        b=$next
+    done
+    echo
+}
+
+# Prompt the user for input
+echo "Enter the number of terms for Fibonacci series:"
+read n
+
+# Generate and display Fibonacci series
+echo "Fibonacci series up to $n terms:"
+fibonacci $n

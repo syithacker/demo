@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Function to calculate Fibonacci number using recursion
+fibonacci() {
+    if [ $1 -le 1 ]; then
+        echo $1
+    else
+        first=$(fibonacci $(( $1 - 1 )))
+        second=$(fibonacci $(( $1 - 2 )))
+        echo $(( first + second ))
+    fi
+}
+
+# Prompt the user for input
+echo "Enter the number of terms for Fibonacci series:"
+read n
+
+# Generate and display Fibonacci series
+echo "Fibonacci series up to $n terms:"
+for (( i=0; i<n; i++ ))
+do
+    echo -n "$(fibonacci $i) "
+done
+echo

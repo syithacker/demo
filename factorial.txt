@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Function to calculate factorial without recursion
+factorial() {
+    result=1
+    for (( i=2; i<=$1; i++ ))
+    do
+        result=$(( result * i ))
+    done
+    echo $result
+}
+
+# Prompt the user for input
+echo "Enter a number to calculate its factorial:"
+read number
+
+# Calculate and display the factorial
+result=$(factorial $number)
+echo "Factorial of $number is: $result"
